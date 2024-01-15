@@ -1,0 +1,35 @@
+.color-black-default{
+  color:black;
+}
+.bold {
+  font-weight: 800;
+}
+
+.label{
+  justify-content: center;
+  display:flex;
+  flex-direction: flex-row;
+  align-items: center;
+}
+
+.default-gap{
+  gap:2px;
+}
+
+.start-gap{
+  gap:10px;
+}
+
+.title{
+  font-size:23px;
+}
+
+.movie{
+  display:flex;
+  @media (max-width:768px){
+    flex-direction: column-reverse;
+  }
+  @media (min-width:768px) {
+    flex-direction: row;
+  }
+}
