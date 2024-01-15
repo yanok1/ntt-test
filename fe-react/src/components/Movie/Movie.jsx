@@ -1,40 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
-import {
-  Title,
-  Card,
-  Text,
-  Button,
-  Icon,
-  Label,
-} from "@ui5/webcomponents-react";
+import { Title, Card, Text, Button, Label } from "@ui5/webcomponents-react";
 import "./Movie.scss";
 import Ratio from "../Ratio/Ratio";
 import "@ui5/webcomponents/dist/Icon"; // Import the SAP UI5 Icon
-import SearchBar from "../SearchBar/SearchBar";
+import Spinner from "../Spinner/Spinner";
 
-const Movie = ({
-  id,
-  actors,
-  title,
-  description,
-  image,
-  score,
-  favorite,
-  isLoaded,
-  index,
-}) => {
+const Movie = ({ id, actors, title, description, image, score }) => {
   const [disable, setDisable] = useState(false);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const favoriteState = localStorage.getItem(id);
-    console.log(favoriteState);
     if (favoriteState) {
-      console.log("...", JSON.parse(favoriteState).favorite);
       setDisable(() => JSON.parse(favoriteState).favorite);
       return;
     }
     setDisable(() => false);
   }, []);
+
   return (
     <section>
       <div className="movie">
@@ -59,12 +43,14 @@ const Movie = ({
             Favorite
           </Button>
         </Card>
+        {loading ? <Spinner isLoading={loading}></Spinner> : null}
         <img
+          className={loading ? `display-none` : null}
           src={image}
           alt={title}
           loading="lazy"
           onLoad={() => {
-            isLoaded();
+            setLoading(() => false);
           }}
         />
       </div>
