@@ -1,6 +1,9 @@
-.App {
+.app {
   text-align: center;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .App-logo {
@@ -14,23 +17,8 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .something-more{
   font-size:30px;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -46,4 +34,5 @@
   text-align: center;
   max-width: 1024px;
   margin: 10px auto;
+  flex-basis: calc(100vh - 400px);
 }
