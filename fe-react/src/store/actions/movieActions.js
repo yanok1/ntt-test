@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_MOVIES_SUCCESS, FETCH_MOVIES_FAILURE, PAGE_MODIFIER, SEARCH_MOVIES_SUCCESS, SEARCH_MOVIES_FAILURE } from "../constants.js";
+import { FETCH_MOVIES_SUCCESS, FETCH_MOVIES_FAILURE, PAGE_MODIFIER } from "../constants.js";
 
 export const fetchMovies = (query, currentPage) => async (dispatch) => {
   try {
