@@ -16,7 +16,7 @@ export class MovieService {
     if (response.data.Response == 'False') return [new GetMoviesOutput()];
     let total = response.data.totalResults
     let itens = response.data.Search
-    let totalItens = itens.length
+    let totalItens = 10
     let totalPages = Math.ceil(total / totalItens)
     let currentPage = page ? page : 1
     const movies: GetMoviesID[] = itens;

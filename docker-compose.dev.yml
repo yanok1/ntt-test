@@ -1,6 +1,8 @@
 version: '3'
 
 services:
+  backend:
+    command: sh -c "npm install && npm run start:dev"
   frontend:
     image: node:21-alpine
     container_name: react-app
@@ -9,7 +11,7 @@ services:
       - 3001:3000
     volumes:
       - ./fe-react/:/app
-    command: sh -c "npm install && npm start"
+    command: sh -c "npm install && npm run start"
   proxy:
     image: nginx:alpine
     container_name: nginx
