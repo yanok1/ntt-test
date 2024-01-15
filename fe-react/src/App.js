@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar/SearchBar';
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMovies } from "./store/actions/movieActions";
+import Header from './components/Header/Header'
 
 function App() {
   const movieList = useRef(null)
@@ -25,13 +26,19 @@ function App() {
   }, [page])
 
   return (
-    <div className="App">
-      <SearchBar query={query} setQuery={setQuery} onSearch={makeQuery}></SearchBar>
-      <div ref={movieList}>
-        <MovieList ></MovieList>
-      </div>
+    <>
+    <Header title="Header"></Header>
+    <main className="main">
+      <div className="App">
+        
+        <SearchBar query={query} setQuery={setQuery} onSearch={makeQuery}></SearchBar>
+        <div ref={movieList}>
+          <MovieList ></MovieList>
+        </div>
 
-    </div>
+      </div>
+    </main>
+    </>
   );
 }
 
