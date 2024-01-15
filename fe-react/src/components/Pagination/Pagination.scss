@@ -1,0 +1,22 @@
+.index-pagination {
+  display: "flex";
+  flex:"row";
+  gap:2px;
+  overflow-x: scroll;
+  justify-content: center;
+}
+
+.movies-list {
+  display:"flex";
+  flex-direction: "column";
+  gap: 1px;
+}
+
+.basic-letter{
+  font-size:20px;
+  color: #202020;
+}
+
+.selected {
+  font-weight:800;
+}
