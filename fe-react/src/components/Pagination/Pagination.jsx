@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
 import { pageModifier } from "../../store/actions/movieActions";
 import { useSelector, useDispatch } from "react-redux";
 import "./Pagination";
@@ -11,6 +10,7 @@ const IndexPagination = ({ numberPages }) => {
     <span className="index-pagination">
       {Array.from({ length: numberPages }, (_, i) => (
         <button
+          disabled={page - 1 === i}
           className={`basic-letter ${page ? "selected" : null}`}
           key={i}
           onClick={() => {

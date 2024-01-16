@@ -1,15 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import {
-  Title,
-  Card,
-  Text,
-  Button,
-  Label,
-  List,
-  StandardListItem,
-  Icon,
-} from "@ui5/webcomponents-react";
+import { Title, Text, Button, Label } from "@ui5/webcomponents-react";
 import "./Movie.scss";
 import Ratio from "../Ratio/Ratio";
 import "@ui5/webcomponents/dist/Icon"; // Import the SAP UI5 Icon
@@ -27,7 +18,7 @@ const Movie = ({ id, actors, title, description, image, score }) => {
       return;
     }
     setDisable(() => false);
-  }, []);
+  }, [id]);
 
   return (
     <section>
